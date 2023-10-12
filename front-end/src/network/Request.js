@@ -25,7 +25,7 @@ export default class Request {
     axios.defaults.baseURL = base.url
     axios.defaults.headers.common['x-access-token'] = this.user.userToken
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-    axios.defaults.timeout = 6000
+    axios.defaults.timeout = 30000
   }
 
   setupDebug() {
@@ -57,7 +57,7 @@ export default class Request {
     await request
     .then((response) => { callback(response.data) })
     .catch((error) => {
-      callback({success: false})
+      callback({success: false, error})
       this.handleError(error)
     })
   }

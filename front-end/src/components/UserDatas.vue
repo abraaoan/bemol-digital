@@ -1,6 +1,7 @@
 <script setup>
 import { inject } from 'vue'
 import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
 
 const user = inject('user').value
 const router = useRouter()
@@ -10,6 +11,13 @@ const logout = async () => {
   await router.isReady();
   router.push({ name: 'login' });
 }
+
+onMounted(() => {
+  if (!user.isLogged) {
+    router.push({ name: 'login' });
+  }
+})
+
 </script>
 
 <template>

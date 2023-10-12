@@ -17,6 +17,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// History fallback
+var history = require('connect-history-api-fallback');
+app.use(history());
+
 // Database
 const mongoose = require("mongoose");
 mongoose.connect(dbConfig.uri).catch(error => { console.error(error) });

@@ -7,7 +7,7 @@ import Request from './network/Request'
 
 const router = useRouter()
 const user = ref(new User(localStorage))
-const request = ref(new Request(user.value, router, true))
+const request = ref(new Request(user.value, router))
 
 provide('request', request)
 provide('user', user)

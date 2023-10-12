@@ -157,6 +157,8 @@ const submit = (e) => {
     isSomethingWrong.value = !result.success;
     isLoading.value = false;
 
+    console.log(result);
+
     if (result.success) {
       backHome()
     }
