@@ -2,6 +2,7 @@ const express = require("express");
 const dbConfig = require("./config/db.config");
 const config = require("./config/config");
 const cors = require('cors');
+const path = require('path');
 
 // App
 const app = express();
@@ -27,10 +28,16 @@ router.use(function(_, _, next) {
   next();
 });
 
-app.get('/', function(_, res) {
+app.get('/hello', function(_, res) {
   res.json({ message: 'hooray! welcome to Bemol Digital api!' });   
 });
 
-const path = '/api'
+// html page
+app.use(express.static(path.join(__dirname, "front-end/dist")));
+app.get('/', function(req, res) {
+  res.sendFile(path.join((__dirname + "/front-end/dist/index.html")));
+});
+
+const apiPath = '/api'
 const userRouter = require('./routers/router.user');
-app.use(path, userRouter);
+app.use(apiPath, userRouter);
