@@ -1,6 +1,6 @@
 const config = {
   protocol: "http",
-  host: "localhost",
+  host: process.env.NODE_ENV === 'development' ? "localhost" : "abraaoan.com",
   port:"8186",
 }
 
