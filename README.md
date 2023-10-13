@@ -1,7 +1,7 @@
 # Bemol Digital challenger
 [Live example](http://api.abraaoan.com:8188/)  
 
-I do an application using node express as API and serving a Vue application.  
+I did an application using node express as API and serving a Vue application.  
 Basically we have a login View, a register and a Home.  
 To acess home first you have to create a user in Register page and then loggin.
 
