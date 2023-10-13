@@ -46,7 +46,6 @@ import { ref, onMounted, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import paths from '../network/paths';
 import Request from '../network/Request'
-import User from '../models/User'
 
 const request = inject('request')
 const user = inject('user')
@@ -102,7 +101,9 @@ const validatePassWord = (pass) => {
 }
 
 onMounted(async () => {
-  
+  if (!user.value.isLogged) {
+    router.push({ name: 'login' });
+  }
 })
 
 const goHome = async () => {
