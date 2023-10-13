@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 // Database
 const mongoose = require("mongoose");
+console.log(dbConfig.uri);
 mongoose.connect(dbConfig.uri).catch(error => { console.error(error) });
 
 // 

@@ -72,6 +72,7 @@ router.route('/user')
 
       try {
         console.log('----> saving...');
+        console.log(user);
         await user.save().catch(error => {
           res.status(400).json({ success: false, error });
         })
