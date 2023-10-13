@@ -58,8 +58,6 @@ router.route('/user')
         return;
       }
 
-      console.log('---->', req.body);
-
       const pass = bcrypt.hashSync(req.body.password, 8);
       var user = new User();
 
@@ -71,15 +69,12 @@ router.route('/user')
       user.endereco = req.body.endereco;
 
       try {
-        console.log('----> saving...');
         console.log(user);
         await user.save().catch(error => {
           res.status(400).json({ success: false, error });
         })
-        console.log('----> saved!');
         res.json({ success: true });
       } catch (error) {
-        console.log('----> ERROR!');
         if (checkSignUpErrorEmailExist(error)) {
           res.status(400).json({ success: false, message: "Email already in use." });
         } else {
