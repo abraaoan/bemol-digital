@@ -1,4 +1,6 @@
 # Bemol Digital challenger
+[Live example](http://api.abraaoan.com:8188/)  
+
 I do an application using node express as API and serving a Vue application.  
 Basically we have a login View, a register and a Home.  
 To acess home first you have to create a user in Register page and then loggin.
@@ -18,6 +20,15 @@ You'll need a node, npm and pm2.
 #### Deploy
 Unfortunally it's impossible to deploy outside my enviroment for secury reason.  
 But with you have acess, just run the command `PM2 deploy production`
+
+## Code Architecture
+Overview how the micro service is structure.  
+![plot](./assets/CodeSystem.jpeg)
+
+## Project Architecture
+Macro view how everything works.
+![plot](./assets/system.jpeg)
+
 
 That's It.  
 Thank you!
