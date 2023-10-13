@@ -20,7 +20,9 @@ app.use(bodyParser.json());
 // Database
 const mongoose = require("mongoose");
 console.log(dbConfig.uri);
-mongoose.connect(dbConfig.uri).catch(error => { console.error(error) });
+mongoose.connect(dbConfig.uri).then(() => {
+  console.log('-----> DB o/ connected');
+}).catch(error => { console.error(error) });
 
 // 
 app.get('/hello', function(_, res) {
