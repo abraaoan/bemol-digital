@@ -71,9 +71,12 @@ router.route('/user')
       user.endereco = req.body.endereco;
 
       try {
+        console.log('----> saving...');
         await user.save()
+        console.log('----> saved!');
         res.json({ success: true });
       } catch (error) {
+        console.log('----> ERROR!');
         if (checkSignUpErrorEmailExist(error)) {
           res.status(400).json({ success: false, message: "Email already in use." });
         } else {
