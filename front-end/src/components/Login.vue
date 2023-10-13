@@ -101,8 +101,8 @@ const validatePassWord = (pass) => {
 }
 
 onMounted(async () => {
-  if (!user.value.isLogged) {
-    router.push({ name: 'login' });
+  if (user.value.isLogged) {
+    router.push({ name: 'home' });
   }
 })
 

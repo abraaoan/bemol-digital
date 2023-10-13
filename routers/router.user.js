@@ -58,6 +58,8 @@ router.route('/user')
         return;
       }
 
+      console.log('---->', req.body);
+
       const pass = bcrypt.hashSync(req.body.password, 8);
       var user = new User();
 
@@ -155,6 +157,8 @@ var validateField = (body, next) => {
     next({ success: false, message: "Email is required." });
   } else if (!commom.isDefined(body, "password")) {
     next({ success: false, message: "Password is required." });
+  } else if (!commom.isDefined(body, "cep")) {
+    next({ success: false, message: "CEP is required." });
   } else {
     next();
   }
