@@ -13,7 +13,7 @@ You'll need a node, npm and pm2.
 #### Steps to setup
 1. First in the main folder run `npm install`  to install all the API dependency.
 2. Second step is enter in front-end/ and the run the command `npm run build` to create the Applicaiton.
-3. And then to test just run the command `npm run dev`
+3. And then to test just run the command `node index.js`
 4. In your browser open `http://localhost:8188/` to see the Application
 5. In your browser open `http://localhost:8188/hello` to see an example of the API
 
